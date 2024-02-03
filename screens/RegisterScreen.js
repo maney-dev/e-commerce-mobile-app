@@ -26,11 +26,11 @@ const RegisterScreen = () => {
       password: password,
     };
 
-    // Envoie le post request to the backend API
+    // Envoie le post request dans le backend API
     axios
-      .post("http://localhost:800/register", user)
+      .post("http://localhost:8000/register", user)
       .then((response) => {
-        console.log("response");
+        console.log(response);
         Alert.alert("Inscription réussi", "Vous vous êtes bien inscrit");
 
         setName("");

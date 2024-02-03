@@ -111,7 +111,9 @@ app.get("/verify/:token", async (req, res) => {
     //Trouver User avec le token de vérification donné
     const user = await User.findOne({ verificationToken: token });
     if (!user) {
-      return res.status(404).json({ message: "Invalid verification token" });
+      return res
+        .status(404)
+        .json({ message: "Token de verification invalide  " });
     }
 
     //Marquer l'utilisateur comme vérifié
